@@ -25,9 +25,8 @@
   when: iw_is_inst.rc != 0
 
 - name: Install Interworx
-  pre_tasks:
-    - debug:
-        msg: "{{ iw_release_channel }}"
+  debug:
+    msg: "release channel: {{ iw_release_channel }}"
   command: /bin/sh {{ iw_install_script_loc }} -l -r {{ iw_release_channel }}
   become: yes
   async: 1800
