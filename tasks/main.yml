@@ -26,7 +26,7 @@
 
 - name: Install Interworx
   debug:
-    msg: "release channel: {{ iw_release_channel }}"
+    var=iw_release_channel
   command: /bin/sh {{ iw_install_script_loc }} -l -r {{ iw_release_channel }}
   become: yes
   async: 1800
